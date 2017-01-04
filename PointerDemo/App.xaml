@@ -3,6 +3,9 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:PointerDemo"
+    xmlns:converters="using:PointerDemo.Converters"
     RequestedTheme="Light">
-
+    <Application.Resources>
+        <converters:BoolToColorValueConverter x:Name="BoolToColorValueConverter"></converters:BoolToColorValueConverter>
+    </Application.Resources>
 </Application>

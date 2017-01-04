@@ -7,7 +7,54 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <Page.Resources>
+        <Style TargetType="Rectangle" x:Name="SegmentDisplayRectangle" >
+            <Setter Property="Stroke" Value="Black"></Setter>
+        </Style>
+    </Page.Resources>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid Width="80" Height="160" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="12"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="12"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="12"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="12"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="12"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Grid.Row="0" Grid.Column="1" DataContext="{x:Bind segments[0]}"
+                       x:Name="segment1" PointerEntered="Segment_PointerEntered" PointerPressed="Segment_PointerPressed"
+                       Fill="{Binding IsOn,Converter={StaticResource BoolToColorValueConverter}}" Style="{StaticResource SegmentDisplayRectangle}" />
+
+            <Rectangle Grid.Row="1" Grid.Column="0" DataContext="{x:Bind segments[1]}"
+                       x:Name="segment2" PointerEntered="Segment_PointerEntered" PointerPressed="Segment_PointerPressed"
+                       Fill="{Binding IsOn,Converter={StaticResource BoolToColorValueConverter}}" Style="{StaticResource SegmentDisplayRectangle}" />
+            
+            <Rectangle Grid.Row="1" Grid.Column="2" DataContext="{x:Bind segments[2]}"
+                       x:Name="segment3" PointerEntered="Segment_PointerEntered" PointerPressed="Segment_PointerPressed"
+                       Fill="{Binding IsOn,Converter={StaticResource BoolToColorValueConverter}}" Style="{StaticResource SegmentDisplayRectangle}"/>
+
+            <Rectangle Grid.Row="2" Grid.Column="1" DataContext="{x:Bind segments[3]}"
+                       x:Name="segment4" PointerEntered="Segment_PointerEntered" PointerPressed="Segment_PointerPressed"
+                       Fill="{Binding IsOn,Converter={StaticResource BoolToColorValueConverter}}" Style="{StaticResource SegmentDisplayRectangle}"/>
+
+            <Rectangle Grid.Row="3" Grid.Column="0" DataContext="{x:Bind segments[4]}"
+                       x:Name="segment5" PointerEntered="Segment_PointerEntered" PointerPressed="Segment_PointerPressed"
+                       Fill="{Binding IsOn,Converter={StaticResource BoolToColorValueConverter}}" Style="{StaticResource SegmentDisplayRectangle}" />
+            
+            <Rectangle Grid.Row="3" Grid.Column="2" DataContext="{x:Bind segments[5]}"
+                       x:Name="segment6" PointerEntered="Segment_PointerEntered" PointerPressed="Segment_PointerPressed"
+                       Fill="{Binding IsOn,Converter={StaticResource BoolToColorValueConverter}}" Style="{StaticResource SegmentDisplayRectangle}" />
+
+            <Rectangle Grid.Row="4" Grid.Column="1" DataContext="{x:Bind segments[6]}"
+                       x:Name="segment7" PointerEntered="Segment_PointerEntered" PointerPressed="Segment_PointerPressed"
+                       Fill="{Binding IsOn,Converter={StaticResource BoolToColorValueConverter}}" Style="{StaticResource SegmentDisplayRectangle}" />
+        </Grid>
 
     </Grid>
 </Page>
